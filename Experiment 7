@@ -1,0 +1,44 @@
+Code:-
+def is_safe(a, row, col, n):
+    for i in range(row):
+        if a[i][col] == 1:
+            return False
+    for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
+        if a[i][j] == 1:
+            return False
+    for i, j in zip(range(row, -1, -1), range(col, n)):
+        if a[i][j] == 1:
+            return False
+    return True
+def nq(a, row, n):
+    if row == n:
+        for r in a:
+            print(" ".join("1" if cell == 1 else "0" for cell in r))
+        print("\n")
+        return True
+    nqueen = False
+    for col in range(n):
+        if is_safe(a, row, col, n):
+            a[row][col] = 1
+            nqueen = nq(a, row + 1, n) or nqueen
+            a[row][col] = 0
+    return nqueen
+def print_sol(n):
+    a = [[0 for _ in range(n)] for _ in range(n)]
+    if not nq(a, 0, n):
+        print()
+n = int(input("Enter board size : "))
+print_sol(n)
+
+Output:-
+Enter board size : 4
+0 1 0 0
+0 0 0 1
+1 0 0 0
+0 0 1 0
+
+
+0 0 1 0
+1 0 0 0
+0 0 0 1
+0 1 0 0
