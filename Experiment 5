@@ -1,0 +1,21 @@
+Code:-
+import random
+def obj_func(x):
+    return x**2 + 4 * x
+def hill(start, maximum):
+    current_x = start
+    current_value = obj_func(current_x)
+    for _ in range(maximum):
+        next_x = current_x + random.uniform(0, 0.1)
+        next_value = obj_func(next_x)
+        if next_value > current_value:
+            current_x = next_x + random.uniform(0, 0.5)
+            current_value = obj_func(current_x)
+    return current_x, current_value
+current_state = 0
+maximum = 10
+result = hill(current_state, maximum)
+print("Best x: {:.4f} Best Value: {:.4f}".format(result[0], result[1]))
+
+Output:-
+Best x: 2.2170 Best Value: 13.7832
