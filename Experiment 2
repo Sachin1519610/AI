@@ -1,0 +1,90 @@
+Code:-
+import pandas as pd
+data = {"Name" : ["Alice","Bod","Charlie","David","Eve"],
+          "Age": [25,30,35,40,28],
+          "Salary" : [50000,60000,70000,80000,55000]}
+df = pd.DataFrame(data)
+print("Full dataframe : ",df)
+df = pd.DataFrame(data)
+print("Full dataframe : ",df)
+print("First 2 rows :",df.head(2))
+print("First 2 rows : " ,df.tail(2))
+import pandas as pd
+data = {"Name" : ["Alice","Bod","Charlie","David","Eve"],
+          "Age": [25,30,35,40,28],
+          "Salary" : [50000,60000,70000,80000,55000]}
+df = pd.DataFrame(data)
+print("Full dataframe : ",df)
+df = pd.DataFrame(data)
+print("Full dataframe : ",df)
+print("First 2 rows :",df.head(2))
+print("First 2 rows : " ,df.tail(2))
+print("Statistical Summary : ",df.describe())
+print("Mean Age  : ",df["Age"].mean())
+print("Printing One Columa : ",df["Name"])
+print("Min Salary : ",df["Salary"].min())
+print("Max Salary : ",df["Salary"].max())
+print(df.loc[0])
+print("df.loc(0.0)")
+
+Output:-
+Full dataframe :        Name  Age  Salary
+0    Alice   25   50000
+1      Bod   30   60000
+2  Charlie   35   70000
+3    David   40   80000
+4      Eve   28   55000
+Full dataframe :        Name  Age  Salary
+0    Alice   25   50000
+1      Bod   30   60000
+2  Charlie   35   70000
+3    David   40   80000
+4      Eve   28   55000
+First 2 rows :     Name  Age  Salary
+0  Alice   25   50000
+1    Bod   30   60000
+First 2 rows :      Name  Age  Salary
+3  David   40   80000
+4    Eve   28   55000
+Full dataframe :        Name  Age  Salary
+0    Alice   25   50000
+1      Bod   30   60000
+2  Charlie   35   70000
+3    David   40   80000
+4      Eve   28   55000
+Full dataframe :        Name  Age  Salary
+0    Alice   25   50000
+1      Bod   30   60000
+2  Charlie   35   70000
+3    David   40   80000
+4      Eve   28   55000
+First 2 rows :     Name  Age  Salary
+0  Alice   25   50000
+1    Bod   30   60000
+First 2 rows :      Name  Age  Salary
+3  David   40   80000
+4    Eve   28   55000
+Statistical Summary :              Age        Salary
+count   5.00000      5.000000
+mean   31.60000  63000.000000
+std     5.94138  12041.594579
+min    25.00000  50000.000000
+25%    28.00000  55000.000000
+50%    30.00000  60000.000000
+75%    35.00000  70000.000000
+max    40.00000  80000.000000
+Mean Age  :  31.6
+Printing One Columa :  0      Alice
+1        Bod
+2    Charlie
+3      David
+4        Eve
+Name: Name, dtype: object
+Min Salary :  50000
+Max Salary :  80000
+Name      Alice
+Age          25
+Salary    50000
+Name: 0, dtype: object
+df.loc(0.0)
+
